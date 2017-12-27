@@ -33,3 +33,7 @@ build/
 
 # lol macs
 .DS_Store/
+
+tmp
+tmp/
+text

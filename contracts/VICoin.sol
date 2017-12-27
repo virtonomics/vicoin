@@ -14,8 +14,8 @@ contract VICoin is IVICoin, StandardToken, RestrictedCaller {
 	string public constant symbol = "VIC";
 	uint8 public constant decimals = 18;
 
-	//event Mint(address to, uint256 amount);
-	//event Burn(address at, uint256 value);
+	event Mint(address to, uint256 amount);
+	event Burn(address at, uint256 value);
 
 	/**
 	* @dev Function to mint tokens
@@ -26,8 +26,8 @@ contract VICoin is IVICoin, StandardToken, RestrictedCaller {
 	function mint(address _to, uint256 _amount) onlyAvailableCaller public returns (bool) {
 		totalSupply = totalSupply.add(_amount);
 		balances[_to] = balances[_to].add(_amount);
-		//Mint(_to, _amount);
-		//Transfer(address(0), _to, _amount);
+		Mint(_to, _amount);
+		Transfer(msg.sender, _to, _amount);
 		return true;
 	}
 
@@ -41,8 +41,8 @@ contract VICoin is IVICoin, StandardToken, RestrictedCaller {
 		require(_amount <= balances[_at]);
 		totalSupply = totalSupply.sub(_amount);
 		balances[_at] = balances[_at].sub(_amount);
-		//Burn(_at, _amount);
-		//Transfer(_at, address(0));
+		Burn(_at, _amount);
+		Transfer(_at, msg.sender, _amount);
 		return true;
 	}
 }

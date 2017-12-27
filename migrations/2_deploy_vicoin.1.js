@@ -1,5 +1,5 @@
 var token = artifacts.require("VICoin.sol");
-var minter = artifacts.require("Minter.sol");
+var minter = artifacts.require("Bounty.sol");
 
 var _token; // instance of vicoin
 var _minter; // minter
