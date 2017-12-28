@@ -1,5 +1,5 @@
 
-## [Virtonomics](https://virtonomics.com) world contracts
+## [Virtonomics](https://virtonomics.com) ethereum smart contracts
 
 http://virtonomics.io
 
