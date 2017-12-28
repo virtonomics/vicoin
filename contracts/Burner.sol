@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
 import './zepellin/ownership/Ownable.sol';
-import './IVICoin.sol';
+import './VICoin.sol';
 
 /**
 * @title burner of VICoin token
@@ -26,10 +26,10 @@ contract Burner is Ownable {
 	*/
 	function burn(address _at, uint256 _amount) onlyOwner internal returns (bool) {
 		require(is_burn_allow == true);
-		IVICoin token = IVICoin(token_address);
-		bool res = token.burn(_at, _amount);
+		VICoin token = VICoin(token_address);
+		token.burn(_at, _amount);
 		Burn(_at, _amount);
-		return res;
+		return true;
 	}
 
 	/**

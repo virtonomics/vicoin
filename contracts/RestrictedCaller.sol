@@ -39,5 +39,4 @@ contract RestrictedCaller is Ownable {
 		require(callers[msg.sender] == address(0)); // not exists
 		delete callers[_address];
 	}
-
 }

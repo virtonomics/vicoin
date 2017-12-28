@@ -11,7 +11,7 @@ contract Crowdsale is Minter {
 	uint256 public virts_presold;
 	uint256 public virts_bounty_presold;
 	// virts converted while ICO is available (10**18)
-	uint256 public virts_converted;
+	uint256 public virts_converted = 0;
 	//
 	// uint256 public token_bounty_presold;
 
@@ -25,7 +25,6 @@ contract Crowdsale is Minter {
 	function Crowdsale(address _token_address, uint256 _virts_presold, uint256 _virts_bounty_presold) Minter(_token_address) public {
 		require(_virts_presold > 0);
 		require(_virts_bounty_presold > 0);
-		virts_converted = 0;
 		virts_presold = _virts_presold * 10**18;
 		virts_bounty_presold = _virts_bounty_presold * 10**18;
 	}

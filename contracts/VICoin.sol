@@ -3,12 +3,11 @@ pragma solidity ^0.4.18;
 import './zepellin/token/StandardToken.sol';
 import './zepellin/ownership/Ownable.sol';
 import './RestrictedCaller.sol';
-import './IVICoin.sol';
 
 /**
 * @title VICoin token
 */
-contract VICoin is IVICoin, StandardToken, RestrictedCaller {
+contract VICoin is StandardToken, RestrictedCaller {
 
 	string public constant name = "Virtonomics Token - VICoin";
 	string public constant symbol = "VIC";
