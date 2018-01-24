@@ -15,7 +15,7 @@ contract Crowdsale is Minter {
 	// when user by vicoins
 	event Buy(address who, uint256 amount, uint16 usd_cents);
 	// when user converts virts to vicoin
-	event Convert(address who, uint256 amount, uint8 user_id);
+	event Convert(address who, uint256 amount, uint16 user_id);
 	
 	// Constructor
 	function Crowdsale(address _token_address) Minter(_token_address) public {}
