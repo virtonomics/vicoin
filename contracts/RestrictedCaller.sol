@@ -26,7 +26,7 @@ contract RestrictedCaller is Ownable {
 	*/
 	function callerAdd(address _address) public onlyOwner {
 		require(_address != address(0));
-		require(callers[msg.sender] == address(0)); // duplicate
+		require(callers[_address] == address(0)); // no exists
 		callers[_address] = _address;
 	}
 
@@ -36,7 +36,7 @@ contract RestrictedCaller is Ownable {
 	*/
 	function callerDel(address _address) public onlyOwner {
 		require(_address != address(0));
-		require(callers[msg.sender] == address(0)); // not exists
+		require(callers[_address] == _address); // already exists
 		delete callers[_address];
 	}
 }
