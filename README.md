@@ -18,4 +18,4 @@ status: _ready to deploy_
 
 Will allow purchase tokens with cryptocurrency and fiat currency.
 
-status: _steel developing_
+status: _ready to deploy_
