@@ -3,7 +3,7 @@ var minter = artifacts.require("Crowdsale.sol");
 
 module.exports = function(deployer) {
 
-	deployer.deploy(minter, token.address, 100, 100).then(function() {
+	deployer.deploy(minter, token.address).then(function() {
 		
 		return token.deployed();
 

@@ -16,7 +16,6 @@ contract Bounty is Minter {
 
 	// send bounty to address
 	function reward(address _to, uint256 _amount) public returns (bool) {
-		require(_amount > 0);
 		mint(_to, _amount);
 		Reward(_to, _amount);
 		return true;

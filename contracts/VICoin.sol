@@ -23,6 +23,8 @@ contract VICoin is StandardToken, RestrictedCaller {
 	* @return A boolean that indicates if the operation was successful.
 	*/
 	function mint(address _to, uint256 _amount) onlyAvailableCaller public returns (bool) {
+		require(_to != address(0));
+		require(_amount > 0);
 		totalSupply = totalSupply.add(_amount);
 		balances[_to] = balances[_to].add(_amount);
 		Mint(_to, _amount);
@@ -37,6 +39,8 @@ contract VICoin is StandardToken, RestrictedCaller {
 	* @return A boolean that indicates if the operation was successful.
 	*/
 	function burn(address _at, uint256 _amount) onlyAvailableCaller public returns (bool) {
+		require(_at != address(0));
+		require(_amount > 0);
 		require(_amount <= balances[_at]);
 		totalSupply = totalSupply.sub(_amount);
 		balances[_at] = balances[_at].sub(_amount);

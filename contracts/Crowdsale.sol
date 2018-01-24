@@ -22,15 +22,15 @@ contract Crowdsale is Minter {
 
 	// buy tokens
 	function buyTokens(address _to, uint256 _amount, uint16 _usd_cents) onlyOwner public returns (bool) {
-		require(_amount > 0);
 		require(_usd_cents > 0);
 		mint(_to, _amount);
 		Buy(_to, _amount, _usd_cents);
 		return true;
 	}
-
+	
 	// convert tokens from virts
 	function convertFromVirts(address _to, uint256 _amount, uint16 _user_id) onlyOwner public returns (bool) {
+		require(_user_id > 0);
 		// one vicoin = 100 virts
 		virts_converted += 100 * _amount;
 		mint(_to, _amount);
