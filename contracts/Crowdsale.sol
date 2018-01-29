@@ -32,7 +32,7 @@ contract Crowdsale is Minter {
 	function convertFromVirts(address _to, uint256 _amount, uint16 _user_id) onlyOwner public returns (bool) {
 		require(_user_id > 0);
 		// one vicoin = 100 virts
-		virts_converted += 100 * _amount;
+		virts_converted += _amount;
 		mint(_to, _amount);
 		Convert(_to, _amount, _user_id);
 		return true;

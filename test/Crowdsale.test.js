@@ -55,7 +55,7 @@ contract('Crowdsale', async function(accounts) {
 		assert.isTrue(totalSupply.equals(1000));
 
 		let virts = await minter.virts_converted();
-		assert.isTrue(virts.equals(500 * 100));
+		assert.isTrue(virts.equals(500));
 
 	});
 });
