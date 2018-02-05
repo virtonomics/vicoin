@@ -21,5 +21,8 @@
     "chai-as-promised": "^7.0.0",
     "chai-bignumber": "^2.0.0",
     "ethereumjs-util": "^5.1.2"
+  },
+  "dependencies": {
+    "bignumber.js": "^6.0.0"
   }
 }

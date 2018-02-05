@@ -16,7 +16,8 @@ module.exports = {
 			host: "geth",
 			port:  8545,
 			from:  "0x572d0e89f7b93875b62a8db285969447daac368a",
-			gas:   4200000
+			gas:   4200000,
+			gasPrice: 20000000000
 		}
 	},
 	solc: {
